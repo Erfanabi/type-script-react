@@ -1,30 +1,10 @@
+import { Blog, blogs as initialBlog } from '../types/data.ts';
+import { useState } from 'react';
+
 function BlogCard() {
-  const blogs = [
-    {
-      title: 'React Tailwind Card with Grid 1',
-      author: 'Erfan Yousefi',
-      image: 'https://picsum.photos/536/354',
-      text: 'react tailwind css card with image It is a long established fact that a reader will be distracted by the readable text',
-    },
-    {
-      title: 'React Tailwind Card with Grid 2',
-      image: 'https://picsum.photos/id/237/536/354',
-      author: 'Erfan Yousefi',
-      text: 'react tailwind css card with image It is a long established fact that a reader will be distracted by the readable text',
-    },
-    {
-      title: 'React Tailwind Card with Grid 3',
-      image: 'https://picsum.photos/seed/picsum/536/354',
-      author: 'Erfan Yousefi',
-      text: 'react tailwind css card with image It is a long established fact that a reader will be distracted by the readable text',
-    },
-    {
-      title: 'React Tailwind Card with Grid 4',
-      image: 'https://picsum.photos/id/1060/536/354?blur=2',
-      author: 'Erfan Yousefi',
-      text: 'react tailwind css card with image It is a long established fact that a reader will be distracted by the readable text',
-    },
-  ];
+  const [blogs, setBlogs] = useState<Blog[]>(initialBlog);
+
+  const [check, setCheck] = useState<boolean>(false);
 
   return (
     <div className={'bg-blue-500'}>
@@ -37,6 +17,10 @@ function BlogCard() {
           </div>
         );
       })}
+
+      <button onClick={() => setCheck(!check)}>
+        Click Me : {check ? 'true' : 'false'}
+      </button>
     </div>
   );
 }

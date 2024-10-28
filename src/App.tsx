@@ -1,7 +1,7 @@
 import './App.css';
+import Navbar from './components/Navbar.tsx';
 import BlogTable from './components/BlogTable.tsx';
 import BlogCard from './components/BlogCard.tsx';
-import Navbar from './components/Navbar.tsx';
 
 function App() {
   return (
