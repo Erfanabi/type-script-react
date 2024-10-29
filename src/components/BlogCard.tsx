@@ -1,9 +1,7 @@
-import { Blog, blogs as initialBlog } from '../types/data.ts';
 import { useState } from 'react';
+import { IBlog } from '../types/data.ts';
 
-function BlogCard() {
-  const [blogs, setBlogs] = useState<Blog[]>(initialBlog);
-
+function BlogCard({ blogs }: { blogs: IBlog[] }) {
   const [check, setCheck] = useState<boolean>(false);
 
   return (
@@ -14,6 +12,7 @@ function BlogCard() {
         return (
           <div>
             <p>{item.title}</p>
+            <h6>{item.author}</h6>
           </div>
         );
       })}

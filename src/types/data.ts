@@ -1,11 +1,11 @@
-export interface Blog {
+export interface IBlog {
   title: string;
   author: string;
   image: string;
   text?: string;
 }
 
-export const blogs: Blog[] = [
+export const blogs: IBlog[] = [
   {
     title: 'React Tailwind Card with Grid 1',
     author: 'Erfan Yousefi',
