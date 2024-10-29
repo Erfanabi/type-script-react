@@ -1,5 +1,5 @@
 import { IPropsBlog } from '../types/data.ts';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import BlogCard from './BlogCard.tsx';
 
 type TPropsBlogTable = Omit<IPropsBlog, 'author' | 'key' | 'title'>;
@@ -16,4 +16,4 @@ const BlogTable: FC<TPropsBlogTable> = ({ blogs }) => {
   );
 };
 
-export default BlogTable;
+export default React.memo(BlogTable);

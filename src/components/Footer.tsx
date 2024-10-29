@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 
 function Footer({ children }: PropsWithChildren<unknown>) {
   return (
@@ -10,6 +10,6 @@ function Footer({ children }: PropsWithChildren<unknown>) {
   );
 }
 
-export default Footer;
+export default React.memo(Footer);
 
 // PropsWithChildren<unknown> => "می تونه هر چیزی باشه"

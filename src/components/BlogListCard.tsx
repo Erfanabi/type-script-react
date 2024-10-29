@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { IBlog } from '../types/data.ts';
 
 function BlogListCard({ blogs }: { blogs: IBlog[] }) {
@@ -24,4 +24,4 @@ function BlogListCard({ blogs }: { blogs: IBlog[] }) {
   );
 }
 
-export default BlogListCard;
+export default React.memo(BlogListCard);

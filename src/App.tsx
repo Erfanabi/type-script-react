@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className={'app flex flex-col gap-y-6'}>
-      <Navbar blogs={blogs} active={active} id={id} />
+      <Navbar blogs={blogs} active={active} id={id} setId={setId} />
       <header className={'app-header'}></header>
 
       <hr />
