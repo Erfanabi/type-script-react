@@ -1,21 +1,16 @@
-import { IBlog } from '../types/data.ts';
+import { IPropsBlog } from '../types/data.ts';
 import { FC } from 'react';
+import BlogCard from './BlogCard.tsx';
 
-interface BlogTableProps {
-  blogs: IBlog[];
-}
+type TPropsBlogTable = Omit<IPropsBlog, 'author' | 'key' | 'title'>;
 
-const BlogTable: FC<BlogTableProps> = ({ blogs }) => {
+const BlogTable: FC<TPropsBlogTable> = ({ blogs }) => {
   return (
     <div className={'bg-green-300'}>
       <p>BlogTable</p>
 
-      {blogs.map((item) => {
-        return (
-          <div>
-            <p>{item.title}</p>
-          </div>
-        );
+      {blogs.map((item, key) => {
+        return <BlogCard key={key} title={item.title} author={item.author} />;
       })}
     </div>
   );

@@ -31,3 +31,10 @@ export const blogs: IBlog[] = [
     text: 'react tailwind css card with image It is a long established fact that a reader will be distracted by the readable text',
   },
 ];
+
+export interface IPropsBlog {
+  blogs: IBlog[];
+  title: string;
+  author: string;
+  key: number;
+}

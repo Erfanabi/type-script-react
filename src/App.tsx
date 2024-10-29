@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar.tsx';
 import BlogTable from './components/BlogTable.tsx';
-import BlogCard from './components/BlogCard.tsx';
+import BlogListCard from './components/BlogListCard.tsx';
 import { useState } from 'react';
 import { blogs as initialBlog, IBlog } from './types/data.ts';
 import Footer from './components/Footer.tsx';
@@ -19,7 +19,7 @@ function App() {
       <hr />
 
       <BlogTable blogs={blogs} />
-      <BlogCard blogs={blogs} />
+      <BlogListCard blogs={blogs} />
 
       <Footer></Footer>
     </div>

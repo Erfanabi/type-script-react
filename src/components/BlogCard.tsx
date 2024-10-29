@@ -1,27 +1,18 @@
-import { useState } from 'react';
-import { IBlog } from '../types/data.ts';
+import { IPropsBlog } from '../types/data.ts';
+import { FC } from 'react';
 
-function BlogCard({ blogs }: { blogs: IBlog[] }) {
-  const [check, setCheck] = useState<boolean>(false);
+type TPropsBlogCard = Omit<IPropsBlog, 'blogs'>;
 
+const BlogCard: FC<TPropsBlogCard> = ({ title, author, key }) => {
   return (
-    <div className={'bg-blue-500'}>
-      <p>BlogCard</p>
-
-      {blogs.map((item) => {
-        return (
-          <div>
-            <p>{item.title}</p>
-            <h6>{item.author}</h6>
-          </div>
-        );
-      })}
-
-      <button onClick={() => setCheck(!check)}>
-        Click Me : {check ? 'true' : 'false'}
-      </button>
+    <div className={'bg-gray-600'}>
+      <p>{title}</p>
+      <p>{author}</p>
+      <p>{key}</p>
     </div>
   );
-}
+};
 
 export default BlogCard;
+
+// type TPropsBlogCard = Omit<IPropsBlog, 'blogs'>;  => "به غیر از"
