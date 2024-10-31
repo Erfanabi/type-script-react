@@ -1,5 +1,5 @@
 import { IBlog } from '../types/data.ts';
-import { Dispatch, JSX, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 interface NavbarProps {
   blogs: IBlog[];
@@ -8,8 +8,8 @@ interface NavbarProps {
   setId: Dispatch<SetStateAction<number>>;
 }
 
-function Navbar({ blogs, active, id, setId }: NavbarProps) {
-  const FOOTER: JSX.Element = (
+function Navbar({ id, setId }: NavbarProps) {
+  return (
     <div className={'bg-amber-400'}>
       <p>{id}</p>
 
@@ -18,8 +18,6 @@ function Navbar({ blogs, active, id, setId }: NavbarProps) {
       </button>
     </div>
   );
-
-  return { FOOTER };
 }
 
 export default Navbar;

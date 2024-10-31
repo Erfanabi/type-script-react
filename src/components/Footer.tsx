@@ -1,11 +1,23 @@
-import React, { PropsWithChildren } from 'react';
+import React, { JSX, PropsWithChildren } from 'react';
 
 function Footer({ children }: PropsWithChildren<unknown>) {
-  return (
-    <div className={'bg-red-400'}>
+  const FOOTER: JSX.Element = (
+    <div>
       <p>footer</p>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+  );
 
-      {children}
+  return (
+    <div className={'bg-red-500'}>
+      {FOOTER}
+      <div>{children}</div>;
     </div>
   );
 }
