@@ -6,6 +6,7 @@ import { blogs as initialBlog, IBlog } from './types/data.ts';
 import Footer from './components/Footer.tsx';
 import ModalRegister from './components/ModalRegister.tsx';
 import Navbar from './components/Navbar.tsx';
+import Body from './components/Body.tsx';
 
 function App() {
   const [blogs, setBlogs] = useState<IBlog[]>(initialBlog);
@@ -17,6 +18,8 @@ function App() {
       <Navbar blogs={blogs} active={active} id={id} setId={setId} />
       <header className={'app-header'}></header>
 
+      <hr />
+      <Body />
       <hr />
 
       <BlogTable blogs={blogs} />
