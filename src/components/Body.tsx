@@ -1,4 +1,4 @@
-import useFetch from '../useFetch.ts';
+import useFetch from '../utils/useFetch.ts';
 
 interface User {
   id: number;
