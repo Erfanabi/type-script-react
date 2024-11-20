@@ -14,17 +14,15 @@ function App() {
   const [active, setActive] = useState<boolean>(false);
   const [id, setId] = useState<number>(5);
 
+  const onClick = () => {
+    console.log('ok');
+  };
+
   return (
     <div className={'app flex flex-col gap-y-6'}>
       <Navbar blogs={blogs} active={active} id={id} setId={setId} />
 
-      <Button
-        borderRadius={{
-          borderTop: '3px solid black',
-          borderLeft: '5px solid green',
-          borderRight: '8px solid black',
-        }}
-      />
+      <Button onClick={onClick} />
 
       <header className={'app-header'}></header>
 

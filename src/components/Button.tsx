@@ -39,24 +39,24 @@
 
 // ************
 
-type ButtonProps = {
-    borderRadius: Record<string, string>;
-};
-
-function Button({borderRadius}: ButtonProps) {
-    console.log(borderRadius);
-
-    return (
-        <button
-            style={borderRadius}
-            className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
-        >
-            Button
-        </button>
-    );
-}
-
-export default Button;
+// type ButtonProps = {
+//     borderRadius: Record<string, string>;
+// };
+//
+// function Button({borderRadius}: ButtonProps) {
+//     console.log(borderRadius);
+//
+//     return (
+//         <button
+//             style={borderRadius}
+//             className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
+//         >
+//             Button
+//         </button>
+//     );
+// }
+//
+// export default Button;
 
 // ----------
 
@@ -85,3 +85,22 @@ export default Button;
 // };
 
 // ----------
+
+// ************
+
+type ButtonProps = {
+  onClick: () => void;
+};
+
+function Button({ onClick }: ButtonProps) {
+  return (
+    <button
+      onClick={onClick}
+      className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
+    >
+      Button
+    </button>
+  );
+}
+
+export default Button;
