@@ -89,16 +89,14 @@
 // ************
 
 type ButtonProps = {
-  onClick: () => void;
+  // children: React.ReactNode;
+  children: JSX.Element;
 };
 
-function Button({ onClick }: ButtonProps) {
+function Button({ children }: ButtonProps) {
   return (
-    <button
-      onClick={onClick}
-      className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
-    >
-      Button
+    <button className="bg-red-500 px-4 py-2 w-fit ms-5 text-white">
+      {children}
     </button>
   );
 }
