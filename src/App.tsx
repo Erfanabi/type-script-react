@@ -1,7 +1,7 @@
 import './App.css';
 import BlogTable from './components/BlogTable.tsx';
 import BlogListCard from './components/BlogListCard.tsx';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { blogs as initialBlog, IBlog } from './types/data.ts';
 import Footer from './components/Footer.tsx';
 import ModalRegister from './components/ModalRegister.tsx';
@@ -14,6 +14,8 @@ function App() {
   const [active, setActive] = useState<boolean>(false);
   const [id, setId] = useState<number>(5);
 
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
   return (
     <div className={'app flex flex-col gap-y-6'}>
       <Navbar blogs={blogs} active={active} id={id} setId={setId} />
@@ -22,7 +24,7 @@ function App() {
       {/*  <div>Click Me</div>*/}
       {/*</Button>*/}
 
-      <Button type="button" value={'dd'} />
+      <Button type="button" ref={buttonRef} />
 
       <header className={'app-header'}></header>
 
