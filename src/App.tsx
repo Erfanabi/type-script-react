@@ -18,12 +18,7 @@ function App() {
     <div className={'app flex flex-col gap-y-6'}>
       <Navbar blogs={blogs} active={active} id={id} setId={setId} />
 
-      <Button
-        backgroundColor="black"
-        fontSize={15}
-        textColor="blue"
-        padding={[2, 5, '6', 9]}
-      />
+      <Button styles={{ color: 'yellow', backgroundColor: 'green' }} />
 
       <header className={'app-header'}></header>
 

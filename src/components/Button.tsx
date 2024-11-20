@@ -39,21 +39,16 @@
 
 // ************
 
-type Color = 'red' | 'blue' | 'green' | 'black';
+import { CSSProperties } from 'react';
 
 type ButtonProps = {
-  backgroundColor: string;
-  textColor: Color;
-  fontSize: number;
-  isShape?: boolean;
-  // padding: number[];
-  padding: [number, number, string, number];
+  styles: CSSProperties;
 };
 
-function Button({ backgroundColor, fontSize, textColor }: ButtonProps) {
+function Button({ styles }: ButtonProps) {
   return (
     <button
-      style={{ backgroundColor, fontSize, color: textColor }}
+      style={styles}
       className="bg-red-500 px-4 py-2 w-fit ms-5 rounded-lg text-white"
     >
       Button
