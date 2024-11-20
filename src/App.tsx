@@ -7,6 +7,7 @@ import Footer from './components/Footer.tsx';
 import ModalRegister from './components/ModalRegister.tsx';
 import Navbar from './components/Navbar.tsx';
 import Body from './components/Body.tsx';
+import Button from './components/Button.tsx';
 
 function App() {
   const [blogs, setBlogs] = useState<IBlog[]>(initialBlog);
@@ -16,6 +17,14 @@ function App() {
   return (
     <div className={'app flex flex-col gap-y-6'}>
       <Navbar blogs={blogs} active={active} id={id} setId={setId} />
+
+      <Button
+        backgroundColor="black"
+        fontSize={15}
+        textColor="blue"
+        padding={[2, 5, '6', 9]}
+      />
+
       <header className={'app-header'}></header>
 
       <hr />
