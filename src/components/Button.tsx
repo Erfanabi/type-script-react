@@ -109,17 +109,33 @@
 
 // const url: TUrl = 'http://localhost:3000';
 
-interface IUrl {
-  url: string;
-}
+// interface IUrl {
+//   url: string;
+// }
 
-const url: IUrl = {
-  url: 'http://localhost:3000',
-};
+// const url: IUrl = {
+//   url: 'http://localhost:3000',
+// };
 
-function Button() {
+// function Button() {
+//   return (
+//     <button className="bg-red-500 px-4 py-2 w-fit ms-5 text-white">
+//       click me
+//     </button>
+//   );
+// }
+
+// export default Button;
+
+// ************
+
+import React from 'react';
+
+type ButtonProps = React.ComponentProps<'button'>;
+
+function Button(props: ButtonProps) {
   return (
-    <button className="bg-red-500 px-4 py-2 w-fit ms-5 text-white">
+    <button {...props} className="bg-red-500 px-4 py-2 w-fit ms-5 text-white">
       click me
     </button>
   );

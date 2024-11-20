@@ -22,7 +22,7 @@ function App() {
       {/*  <div>Click Me</div>*/}
       {/*</Button>*/}
 
-      <Button />
+      <Button type="button" value={'dd'} />
 
       <header className={'app-header'}></header>
 
