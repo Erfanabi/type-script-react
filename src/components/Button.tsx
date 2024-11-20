@@ -88,15 +88,39 @@
 
 // ************
 
-type ButtonProps = {
-  // children: React.ReactNode;
-  children: JSX.Element;
+// type ButtonProps = {
+//   // children: React.ReactNode;
+//   children: JSX.Element;
+// };
+//
+// function Button({ children }: ButtonProps) {
+//   return (
+//     <button className="bg-red-500 px-4 py-2 w-fit ms-5 text-white">
+//       {children}
+//     </button>
+//   );
+// }
+//
+// export default Button;
+
+// ************
+
+// type TUrl = string;
+
+// const url: TUrl = 'http://localhost:3000';
+
+interface IUrl {
+  url: string;
+}
+
+const url: IUrl = {
+  url: 'http://localhost:3000',
 };
 
-function Button({ children }: ButtonProps) {
+function Button() {
   return (
     <button className="bg-red-500 px-4 py-2 w-fit ms-5 text-white">
-      {children}
+      click me
     </button>
   );
 }

@@ -22,7 +22,7 @@ function App() {
       {/*  <div>Click Me</div>*/}
       {/*</Button>*/}
 
-      <Button>Click Me</Button>
+      <Button />
 
       <header className={'app-header'}></header>
 
