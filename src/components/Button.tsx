@@ -186,14 +186,41 @@
 
 // ************
 
+// function Button() {
+//   return (
+//     <button
+//       className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
+//       onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+//         console.log(e);
+//       }}
+//     >
+//       click me
+//     </button>
+//   );
+// }
+//
+// export default Button;
+
+// ************
+
+import { useState } from 'react';
+
+type TUser = {
+  name: string;
+  family: string;
+  age: number;
+};
+
 function Button() {
+  const [count, setCount] = useState<number>(0);
+  const [test, setTest] = useState<string>('');
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [user, setUser] = useState<TUser | null>(null);
+
+  console.log(user?.name);
+
   return (
-    <button
-      className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
-      onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        console.log(e);
-      }}
-    >
+    <button className="bg-red-500 px-4 py-2 w-fit ms-5 text-white">
       click me
     </button>
   );
