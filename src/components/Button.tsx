@@ -250,23 +250,43 @@
 
 // ************
 
-import { useRef } from 'react';
+// import { useRef } from 'react';
+//
+// function MyComponent() {
+//   const inputRef = useRef<HTMLInputElement>(null);
+//
+//   const focusInput = () => {
+//     if (inputRef.current) {
+//       inputRef.current.focus();
+//     }
+//   };
+//
+//   return (
+//     <div>
+//       <input ref={inputRef} type="text" />
+//       <button onClick={focusInput}>Focus Input</button>
+//     </div>
+//   );
+// }
+//
+// export default MyComponent;
 
-function MyComponent() {
-  const inputRef = useRef<HTMLInputElement>(null);
+// ************
 
-  const focusInput = () => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  };
+type TUser = {
+  name: string;
+  family: string;
+  age: number;
+};
 
+type TUser2 = Omit<TUser, 'family'>; // remove
+
+function Button({ age, name }: TUser2) {
   return (
     <div>
-      <input ref={inputRef} type="text" />
-      <button onClick={focusInput}>Focus Input</button>
+      <button>Focus Input</button>
     </div>
   );
 }
 
-export default MyComponent;
+export default Button;
