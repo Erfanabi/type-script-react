@@ -230,20 +230,43 @@
 
 // ************
 
-const buttonText = [
-  'click me',
-  'click me again!',
-  'click me one more time!',
-] as const;
+// const buttonText = [
+//   'click me',
+//   'click me again!',
+//   'click me one more time!',
+// ] as const;
+//
+// buttonText[0] = 'new text';
+//
+// function Button() {
+//   return (
+//     <button className="bg-red-500 px-4 py-2 w-fit ms-5 text-white">
+//       {buttonText.map((item) => item)}
+//     </button>
+//   );
+// }
+//
+// export default Button;
 
-buttonText[0] = 'new text';
+// ************
 
-function Button() {
+import { useRef } from 'react';
+
+function MyComponent() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const focusInput = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
   return (
-    <button className="bg-red-500 px-4 py-2 w-fit ms-5 text-white">
-      {buttonText.map((item) => item)}
-    </button>
+    <div>
+      <input ref={inputRef} type="text" />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
   );
 }
 
-export default Button;
+export default MyComponent;
