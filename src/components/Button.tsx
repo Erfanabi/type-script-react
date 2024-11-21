@@ -273,15 +273,35 @@
 
 // ************
 
-type TUser = {
-  name: string;
-  family: string;
-  age: number;
-};
+// type TUser = {
+//   name: string;
+//   family: string;
+//   age: number;
+// };
+//
+// type TUser2 = Omit<TUser, 'family'>; // remove
+//
+// function Button({ age, name }: TUser2) {
+//   return (
+//     <div>
+//       <button>Focus Input</button>
+//     </div>
+//   );
+// }
+//
+// export default Button;
 
-type TUser2 = Omit<TUser, 'family'>; // remove
+// ************
 
-function Button({ age, name }: TUser2) {
+import { useEffect } from 'react';
+
+type TButtonColor = 'red' | 'green' | 'blue';
+
+function Button() {
+  useEffect(() => {
+    const previousButton = localStorage.getItem('buttonColor') as TButtonColor; // مقدار بازگشتی باید یکی از مقادیر بالا باشه
+  }, []);
+
   return (
     <div>
       <button>Focus Input</button>
