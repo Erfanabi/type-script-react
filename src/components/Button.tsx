@@ -129,23 +129,57 @@
 
 // ************
 
-import React, { forwardRef } from 'react';
+// import React, { forwardRef } from 'react';
+//
+// type ButtonProps = React.ComponentPropsWithRef<'button'>;
+//
+// const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+//   ({ type = 'button', ...rest }, ref) => {
+//     return (
+//       <button
+//         ref={ref}
+//         type={type} // نوع دکمه
+//         className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
+//         {...rest} // سایر props
+//       >
+//         click me
+//       </button>
+//     );
+//   },
+// );
+//
+// export default Button;
 
-type ButtonProps = React.ComponentPropsWithRef<'button'>;
+// ************
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ type = 'button', ...rest }, ref) => {
-    return (
-      <button
-        ref={ref}
-        type={type} // نوع دکمه
-        className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
-        {...rest} // سایر props
-      >
-        click me
-      </button>
-    );
-  },
-);
+interface IButton {
+  type: 'button' | 'submit';
+  color: 'red' | 'green' | 'blue';
+}
+
+interface IButtonText extends IButton {
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+}
+
+// type TButton = {
+//   type: 'button' | 'submit';
+//   color: 'red' | 'green' | 'blue';
+// };
+
+// type TButtonText = IButton & {
+//   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+// };
+
+function Button({ type, color }: IButtonText) {
+  return (
+    <button
+      className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
+      type={type}
+      style={{ color }}
+    >
+      click me
+    </button>
+  );
+}
 
 export default Button;

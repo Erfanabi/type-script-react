@@ -24,7 +24,7 @@ function App() {
       {/*  <div>Click Me</div>*/}
       {/*</Button>*/}
 
-      <Button type="button" ref={buttonRef} />
+      <Button type="button" size="lg" color="blue" />
 
       <header className={'app-header'}></header>
 
