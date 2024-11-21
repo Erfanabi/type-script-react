@@ -152,14 +152,14 @@
 
 // ************
 
-interface IButton {
-  type: 'button' | 'submit';
-  color: 'red' | 'green' | 'blue';
-}
+// interface IButton {
+//   type: 'button' | 'submit';
+//   color: 'red' | 'green' | 'blue';
+// }
 
-interface IButtonText extends IButton {
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-}
+// interface IButtonText extends IButton {
+//   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+// }
 
 // type TButton = {
 //   type: 'button' | 'submit';
@@ -170,12 +170,29 @@ interface IButtonText extends IButton {
 //   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 // };
 
-function Button({ type, color }: IButtonText) {
+// function Button({ type, color }: IButtonText) {
+//   return (
+//     <button
+//       className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
+//       type={type}
+//       style={{ color }}
+//     >
+//       click me
+//     </button>
+//   );
+// }
+//
+// export default Button;
+
+// ************
+
+function Button() {
   return (
     <button
       className="bg-red-500 px-4 py-2 w-fit ms-5 text-white"
-      type={type}
-      style={{ color }}
+      onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        console.log(e);
+      }}
     >
       click me
     </button>
